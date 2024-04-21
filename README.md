@@ -12,17 +12,13 @@
 1. [Git](https://gitforwindows.org/) をインストール
 2. CLIで、`git -v` できることを確認
 
-
 ## インストール
-### cli-mispのインストール
 1. `git clone https://github.com/fukusuket/cli-misp.git`
 2. `cd cli-misp`
 3. `pip install requirements.txt`
 4. `python cli-misp.py`でエラーにならないことを確認
-
-### cli-mispのの設定
-1. MISP API KEY をセットする
-2. MISP URL をセットする
+5. MISP API KEY をセットする
+6. MISP URL をセットする
 
 ## How to use
 1. TODO
