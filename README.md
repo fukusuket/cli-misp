@@ -1,5 +1,5 @@
 # cli-misp
-CLIからMISPイベントを作成するツール
+MISPイベントを作成するCLIツール
 ### Input
 以下プロンプトに従い入力。**(*)** は必須項目。それ以外の項目で不明(or不要)な場合は、未入力+EnterでOK。
 <img alt="Logo" src="demo.gif">
