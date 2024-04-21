@@ -8,7 +8,7 @@ from urllib3.exceptions import InsecureRequestWarning
 urllib3.disable_warnings(InsecureRequestWarning)
 
 MISP_URL = "https://localhost"
-MISP_API_KEY = "xxxxxxx"
+MISP_API_KEY = "xxxxxxxxxxxxxxxxxxxxxxxxx"
 
 
 @dataclass(frozen=True)
@@ -86,33 +86,34 @@ def build_misp_event(ui: UserInput) -> MISPEvent:
 
 
 def get_user_input() -> UserInput:
-    event_uuid = input("Enter UUID of an already existing Event(If it does not exist, leave it blank and enter): ")
-    ticket_url = input("Enter Redmine ticket URL: ")
-    event_info = input("Enter Event info(e.g. [where]_[what]_[how]): ")
+    event_uuid = input("UUID of an existing Event(If not exist, leave it blank): ")
+    ticket_url = input("Redmine ticket URL: ")
+    event_info = input("Event info(e.g. where_what_how): ")
     objects = []
     attributes = []
     file_objects = []
     ioc_type_opt = ["file", "url", "domain", "ip-src", "ip-dst", "other"]
     while True:
-        print("Choose IoC type: ")
+        print("Choose IoC type(blank if there is no input value): ")
         ioc_type_index = TerminalMenu(ioc_type_opt).show()
         ioc_type = ioc_type_opt[ioc_type_index]
         if ioc_type == "file":
-            v1 = input(f"Enter file name or path(e.g. /usr/local/bin): ").strip()
-            v2 = input(f"Enter file command line(e.g. ping 127.0.0.1): ").strip()
-            v3 = input(f"Enter file size in bytes(e.g. 256): ").strip()
-            v4 = input(f"Enter file creation date(e.g. 2024-01-01T00:00:00): ").strip()
-            v5 = input(f"Enter file sha256: ").strip()
+            v1 = input(f"file name or path(e.g. /tmp/XAv1s): ").strip()
+            v2 = input(f"file command line(e.g. /tmp/XAv1s -h bad.example.com): ").strip()
+            v3 = input(f"file size in bytes(e.g. 256): ").strip()
+            v4 = input(f"file creation date(e.g. 2024-01-01T00:00:00): ").strip()
+            v5 = input(f"file sha256: ").strip()
             file_objects.append(MyFileObject(v1, v2, v3, v4, v5))
         elif ioc_type == "other":
-            ioc_value = input(f"Enter IoC value[{ioc_type}]: ").strip()
+            ioc_value = input(f"IoC value[{ioc_type}]: ").strip()
             attributes.append((ioc_type, ioc_value))
         else:
-            ioc_value = input(f"Enter IoC value[{ioc_type}]: ").strip()
-            ioc_comment = input(f"Enter log or comment: ").strip()
+            ioc_value = input(f"IoC value[{ioc_type}]: ").strip()
+            ioc_comment = input(f"log or comment(If not comment, leave it blank): ").strip()
             objects.append((ioc_type, ioc_value.strip(), ioc_comment.strip()))
         if input("Do you have another IoC?[y/n]: ").lower() == "n":
             ui = UserInput(event_uuid, ticket_url, event_info, objects, file_objects, attributes)
+            print("")
             print("Event preview:")
             print(ui)
             if input("Add above event to MISP?[y/n]:").lower() == "y":
@@ -124,11 +125,11 @@ def get_user_input() -> UserInput:
 if __name__ == "__main__":
     user_input = get_user_input()
     misp_event = build_misp_event(user_input)
-
+    print("")
     print(f"Start to connect MISP[{MISP_URL}].")
     misp = PyMISP(MISP_URL, MISP_API_KEY, False)
     print(f"Connecting to MISP[{MISP_URL}] done.")
-
+    print("")
     print("Start to adding event to misp.")
     res = misp.add_event(misp_event)
-    print("Adding event done successfully ^^!")
+    print("Adding event done successfully!")

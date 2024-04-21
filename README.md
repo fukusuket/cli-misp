@@ -1,5 +1,6 @@
 # cli-misp
-コマンドラインでMISPのEventを作成するツール
+コマンドラインでMISPのEventを作成するツール</br>
+<img alt="Logo" src="demo.gif">
 
 ## 事前準備
 #### Python
