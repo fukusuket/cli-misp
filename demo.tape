@@ -67,9 +67,9 @@ Set TypingSpeed 50ms
 
 Type "python3 cli-misp.py"  Enter
 Sleep 2s
-Type "18d0b28d-e614-4588-b92b-fe364ee58c77"  Enter
-Sleep 2s
 Type "https://redmine.example.com/issue/123"  Enter
+Sleep 2s
+Type "18d0b28d-e614-4588-b92b-fe364ee58c77"  Enter
 Sleep 2s
 Type "A public web server was tampered and WebShell by CVE-xxxx"  Enter
 Sleep 2s
