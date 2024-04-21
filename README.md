@@ -29,7 +29,7 @@ MISPイベントを作成するCLIツール
 6. `python cli-misp.py`を実行し、エラーにならないことを確認(URL/APIキー間違いの場合はエラー終了する)
 
 ## 使い方
-`python3 cli-misp.py` を実行し、順次プロンプトに入力する。
+`python cli-misp.py` を実行し、順次プロンプトに入力する。
 #### `UUID of an existing Event`に入力する値
 - 新規Event作成時: **未入力**でOK
 - 既存Event更新時: 更新対象の**自組織**のEvent UUID
