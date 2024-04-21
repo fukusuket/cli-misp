@@ -16,12 +16,6 @@ def main():
         if user_input.lower() == "n":
             break
 
-    op2 = ["beg", "baf", "fw"]
-    attacked_area = TerminalMenu(op2)
-    print("Choose Attacked area: ")
-    ioc_area = attacked_area.show()
-    print(op2[ioc_area])
-
     op3 = ["deny", "disrupt", "detection"]
     action = TerminalMenu(op3)
     print("Choose Course of action: ")
@@ -34,6 +28,7 @@ def main():
         if user_input.lower() == "n":
             break
     url = input("Enter Redmine ticket URL: ")
+
 
 if __name__ == "__main__":
     main()
