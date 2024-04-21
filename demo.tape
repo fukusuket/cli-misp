@@ -66,26 +66,26 @@ Set Height 600
 Set TypingSpeed 50ms
 
 Type "python3 cli-misp.py"  Enter
-Sleep 1s
+Sleep 2s
 Type "18d0b28d-e614-4588-b92b-fe364ee58c77"  Enter
-Sleep 1s
+Sleep 2s
 Type "https://redmine.example.com/issue/123"  Enter
-Sleep 1s
+Sleep 2s
 Type "A public web server was tampered and WebShell by CVE-xxxx"  Enter
 Sleep 2s
 Enter
-Sleep 1s
+Sleep 2s
 Type "/tmp/XAv1s"  Enter
-Sleep 1s
+Sleep 2s
 Type "/tmp/XAv1s -h bad.example.com"  Enter
-Sleep 1s
+Sleep 2s
 Type "256"  Enter
-Sleep 1s
+Sleep 2s
 Type "2024-01-01T00:00:00"  Enter
-Sleep 1s
+Sleep 2s
 Type "42c20820fa228d97dab4f807a88bf053859279db4509ed079bbf68dac7f69047"  Enter
-Sleep 1s
+Sleep 2s
 Type "n"  Enter
-Sleep 1s
+Sleep 5s
 Type "y"  Enter
 Sleep 10s

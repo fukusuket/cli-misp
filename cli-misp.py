@@ -9,7 +9,7 @@ from urllib3.exceptions import InsecureRequestWarning
 urllib3.disable_warnings(InsecureRequestWarning)
 
 MISP_URL = "https://localhost"
-MISP_API_KEY = "xxxxxxxxxxxxxxxxxxxx"
+MISP_API_KEY = "xxxxxxxxxxxxx"
 
 
 @dataclass(frozen=True)
@@ -114,7 +114,6 @@ def get_user_input() -> UserInput:
             objects.append((ioc_type, ioc_value.strip(), ioc_comment.strip()))
         if input("Do you have another IoC?[y/n]: ").lower() == "n":
             ui = UserInput(event_uuid, ticket_url, event_info, objects, file_objects, attributes)
-            print("")
             print("Event preview:")
             print(ui)
             if input("Add above event to MISP?[y/n]:").lower() == "y":
@@ -137,4 +136,5 @@ if __name__ == "__main__":
     print("Start to adding event to misp.")
     res = misp.add_event(misp_event)
     print("Adding event done successfully!")
+    print("")
     print(f"You can view added event: {MISP_URL}/events/view/{str(res['Event']['id'])}")
