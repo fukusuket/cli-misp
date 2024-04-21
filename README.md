@@ -7,7 +7,7 @@ CLIからMISPイベントを作成するツール
 ### Output
 上記実行後にMISPにイベントが作成される。
 <img alt="misp1" src="misp1.png" width="70%">
-<img alt="misp2" src="misp2.png" width="80%">
+<img alt="misp2" src="misp2.png">
 
 ## 事前準備
 #### Python
