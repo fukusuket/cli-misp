@@ -29,8 +29,7 @@ CLIからMISPイベントを作成するツール
 6. MISP API KEY を`cli-misp.py`の10行目にセットする
 
 ## 使い方
-`python3 cli-misp.py` で実行すると、以下入力を求められるので適宜入力する。
-
+`python3 cli-misp.py` を実行し、順次質問に入力する。
 
 ## ツールが付与するコンテキスト
 ### Taxonomy
