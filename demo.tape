@@ -72,7 +72,7 @@ Sleep 1s
 Type "https://redmine.example.com/issue/123"  Enter
 Sleep 1s
 Type "A public web server was tampered and WebShell by CVE-xxxx"  Enter
-Sleep 3s
+Sleep 2s
 Enter
 Sleep 1s
 Type "/tmp/XAv1s"  Enter
