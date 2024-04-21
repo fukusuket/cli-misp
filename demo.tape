@@ -88,4 +88,4 @@ Sleep 2s
 Type "n"  Enter
 Sleep 5s
 Type "y"  Enter
-Sleep 10s
+Sleep 15s
