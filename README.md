@@ -4,8 +4,8 @@
 ## 事前準備
 #### Python
 1. [Python3.12.3](https://www.python.org/downloads) をインストール
-2. CLIで、`python -V` できることを確認
-3. CLIで、`pip -v` できることを確認
+2. CLIで、`python3 -V` できることを確認
+3. CLIで、`pip3 -v` できることを確認
 4. `pip3 install --upgrade pip`
 
 #### Git
@@ -15,8 +15,8 @@
 ## インストール
 1. `git clone https://github.com/fukusuket/cli-misp.git`
 2. `cd cli-misp`
-3. `pip install requirements.txt`
-4. `python cli-misp.py`でエラーにならないことを確認
+3. `pip3 install -r requirements.txt`
+4. `python3 cli-misp.py`でエラーにならないことを確認
 5. MISP API KEY をセットする
 6. MISP URL をセットする
 

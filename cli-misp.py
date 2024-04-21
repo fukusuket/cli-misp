@@ -2,15 +2,19 @@ from simple_term_menu import TerminalMenu
 from rich import print
 
 
-def main():
-    event_info = input("Enter Event info: ")
-    op1 = ["ip-dst", "ip-src", "domain", "url", "filename", "filepath", "md5", "sha256", "registry"]
-    ioc_types = TerminalMenu(op1)
+class UserInput:
+    pass
+
+
+def get_user_input():
+    redmine_url = input("Enter Redmine ticket URL: ")
+    event_info = input("Enter Event info[e.g. [where]_[what]_[how]]: ")
+    ioc_type_opt = ["ip", "domain", "url", "filepath", "md5", "sha256", "other"]
     attributes = []
     while True:
         print("Choose IoC type: ")
-        ioc_type = ioc_types.show()
-        ioc_value = input(f"Enter IoC value[{op1[ioc_type]}]: ")
+        ioc_type = TerminalMenu(ioc_type_opt).show()
+        ioc_value = input(f"Enter IoC value[{ioc_type_opt[ioc_type]}]: ")
         attributes.append((ioc_type, ioc_value))
         user_input = input("Do you have another IoC?[y/n]: ")
         if user_input.lower() == "n":
@@ -23,12 +27,11 @@ def main():
     print(op3[ioc_action])
 
     while True:
-        input("Enter MITRE ATT&CK TID: ")
+        tid = input("Enter MITRE ATT&CK TID: ")
         user_input = input("Do you have another TIDs?[y/n]: ")
         if user_input.lower() == "n":
             break
-    url = input("Enter Redmine ticket URL: ")
 
 
 if __name__ == "__main__":
-    main()
+    get_user_input()
