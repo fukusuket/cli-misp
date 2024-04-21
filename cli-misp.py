@@ -122,11 +122,8 @@ def get_user_input() -> UserInput:
                 continue
 
 def check_misp_connection(url, key) -> PyMISP:
-    print(f"Start to connect MISP[{MISP_URL}].")
     try:
-        misp = PyMISP(url, key, False)
-        print(f"Connecting to MISP[{MISP_URL}] done.")
-        return misp
+        return PyMISP(url, key, False)
     except Exception as e:
         print("Failed to connect MISP. Please check MISP_URL/MISP_API_KEY.")
 
