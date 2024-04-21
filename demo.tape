@@ -60,10 +60,10 @@ Output demo.gif
 Require echo
 
 Set Shell "bash"
-Set FontSize 20
+Set FontSize 16
 Set Width 1200
 Set Height 600
-Set TypingSpeed 25ms
+Set TypingSpeed 10ms
 
 Type "python3 cli-misp.py"  Enter
 Sleep 1s
@@ -88,4 +88,4 @@ Sleep 1s
 Type "n"  Enter
 Sleep 1s
 Type "y"  Enter
-Sleep 5s
+Sleep 3s

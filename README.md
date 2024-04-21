@@ -1,6 +1,11 @@
 # cli-misp
-コマンドラインでMISPのEventを作成するツール</br>
+CLIからMISPイベントを作成するツール
+### Input
 <img alt="Logo" src="demo.gif">
+
+### Output
+<img alt="misp1" src="misp1.png">
+<img alt="misp2" src="misp2.png">
 
 ## 事前準備
 #### Python
