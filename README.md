@@ -3,10 +3,10 @@
 
 ## 事前準備
 #### Python
-1. [Python3.12.3](https://www.python.org/downloads) をインストール
+1. [Python 3.12.3](https://www.python.org/downloads) をインストール
 2. CLIで、`python3 -V` できることを確認
 3. CLIで、`pip3 -v` できることを確認
-4. `pip3 install --upgrade pip`
+4. `pip3 install --upgrade pip` でpip3を最新化する
 
 #### Git
 1. [Git](https://gitforwindows.org/) をインストール
@@ -17,8 +17,19 @@
 2. `cd cli-misp`
 3. `pip3 install -r requirements.txt`
 4. `python3 cli-misp.py`でエラーにならないことを確認
-5. MISP API KEY をセットする
-6. MISP URL をセットする
+5. MISP URL を`cli-misp.py`の9行目にセットする
+6. MISP API KEY を`cli-misp.py`の10行目にセットする
 
-## How to use
-1. TODO
+## 使い方
+`python3 cli-misp.py` で実行すると、以下入力を求められるので適宜入力する。
+
+
+## ツールが付与するコンテキスト
+### Taxonomy
+- https://www.circl.lu/doc/misp-taxonomies/#_tlp_2
+- https://www.circl.lu/doc/misp-taxonomies/#_course_of_action
+- https://www.circl.lu/doc/misp-taxonomies/#_estimative_language
+- https://www.circl.lu/doc/misp-taxonomies/#_workflow
+
+### Galaxy
+- 付与しない
