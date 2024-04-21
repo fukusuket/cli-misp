@@ -1,9 +1,11 @@
 # cli-misp
 CLIからMISPイベントを作成するツール
 ### Input
+以下プロンプトにしたがって入力する。値が不明な場合は未入力でEnter。
 <img alt="Logo" src="demo.gif">
 
 ### Output
+上記実行後にMISPにイベントが作成される。
 <img alt="misp1" src="misp1.png" width="70%">
 <img alt="misp2" src="misp2.png" width="80%">
 
