@@ -4,8 +4,8 @@ CLIからMISPイベントを作成するツール
 <img alt="Logo" src="demo.gif">
 
 ### Output
-<img alt="misp1" src="misp1.png">
-<img alt="misp2" src="misp2.png">
+<img alt="misp1" src="misp1.png" width="70%">
+<img alt="misp2" src="misp2.png" width="80%">
 
 ## 事前準備
 #### Python
