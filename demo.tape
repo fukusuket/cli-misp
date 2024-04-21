@@ -60,7 +60,7 @@ Output demo.gif
 Require echo
 
 Set Shell "bash"
-Set FontSize 16
+Set FontSize 20
 Set Width 1200
 Set Height 600
 Set TypingSpeed 10ms
