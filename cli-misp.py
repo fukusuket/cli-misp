@@ -2,13 +2,14 @@ from dataclasses import dataclass
 from simple_term_menu import TerminalMenu
 from tabulate import tabulate
 from pymisp import MISPEvent, MISPObject, PyMISP
+import sys
 import urllib3
 from urllib3.exceptions import InsecureRequestWarning
 
 urllib3.disable_warnings(InsecureRequestWarning)
 
 MISP_URL = "https://localhost"
-MISP_API_KEY = "xxxxxxxxxxxxxxxxxxx"
+MISP_API_KEY = "xxxxxxxxxxxxxxxxxx"
 
 
 @dataclass(frozen=True)
@@ -126,6 +127,7 @@ def check_misp_connection(url, key) -> PyMISP:
         return PyMISP(url, key, False)
     except Exception as e:
         print("Failed to connect MISP. Please check MISP_URL/MISP_API_KEY.")
+        sys.exit()
 
 if __name__ == "__main__":
     misp = check_misp_connection(MISP_URL, MISP_API_KEY)
