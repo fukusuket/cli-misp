@@ -9,7 +9,7 @@ from urllib3.exceptions import InsecureRequestWarning
 urllib3.disable_warnings(InsecureRequestWarning)
 
 MISP_URL = "https://localhost/"
-MISP_API_KEY = "xxxxxxxxxxxx"
+MISP_API_KEY = "xxxxxxxxxxxxxxxxx"
 
 
 @dataclass(frozen=True)
@@ -106,8 +106,8 @@ def build_misp_event(ui: UserInput, misp: PyMISP) -> (MISPEvent, bool):
 
 
 def get_user_input() -> UserInput:
-    event_uuid = input("UUID of an existing Event: ")
     ticket_url = input("(*) Redmine ticket URL: ")
+    event_uuid = input("    UUID of an existing Event: ")
     event_info = input("(*) Event info: ")
     objects = []
     attributes = []
@@ -120,8 +120,8 @@ def get_user_input() -> UserInput:
         if ioc_type == "file":
             v1 = input(f"(*) file name or path: ").strip()
             v2 = input(f"    file command line: ").strip()
-            v3 = input(f"    file size in bytes: ").strip()
-            v4 = input(f"    file creation date: ").strip()
+            v3 = input(f"    file size in bytes(int): ").strip()
+            v4 = input(f"    file creation date(e.g. 2024-01-01T23:59:59): ").strip()
             v5 = input(f"    file sha256: ").strip()
             file_objects.append(MyFileObject(v1, v2, v3, v4, v5))
         else:
