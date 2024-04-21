@@ -30,11 +30,18 @@ CLIからMISPイベントを作成するツール
 
 ## 使い方
 `python3 cli-misp.py` を実行し、順次プロンプトに入力する。
-- 新規Event作成時: `UUID of an existing Event`は未入力で
-- 既存Event更新時: `UUID of an existing Event`は更新対象のEventのUUID
-- 他組織Eventの拡張時: `UUID of an existing Event`は拡張したい他組織のEvent UUID
+#### `UUID of an existing Event`に入力する値
+- 新規Event作成時: **未入力**でOK
+- 既存Event更新時: 更新対象の**自組織**のEvent UUID
+- 他組織Eventの拡張時: **他組織**のEvent UUID
 
-このツールで付与しないGalaxyは、手動で付与する。
+#### `Event info`に入力する値
+可能な範囲で以下3要素を含める。Event受領組織がアクションできるようにする。
+- Where（どこで）
+- What（なにが）
+- How（どのように）
+
+例： `Public web server of financial system was compromised by WebShell exploiting CVE-XXXX`
 
 ## ツールが付与するコンテキスト
 ### Taxonomy
