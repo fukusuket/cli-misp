@@ -94,6 +94,7 @@ Sleep 2s
 Type "www.example.com"  Enter
 Sleep 2s
 Type "download url"  Enter
+Sleep 2s
 Type "n"  Enter
 Sleep 5s
 Type "y"  Enter

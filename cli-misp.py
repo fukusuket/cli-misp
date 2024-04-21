@@ -9,7 +9,7 @@ from urllib3.exceptions import InsecureRequestWarning
 urllib3.disable_warnings(InsecureRequestWarning)
 
 MISP_URL = "https://localhost/"
-MISP_API_KEY = "9xlgP0x2tNi2cmpwAAnqZ0YzPuGcWVIbTGnoKuOT"
+MISP_API_KEY = "xxxxxxxxxxxxxxxx"
 
 
 @dataclass(frozen=True)
@@ -116,7 +116,7 @@ def get_user_input() -> UserInput:
         inquirer.List(
             "ioc_type",
             message="(*) Choose IoC type: ",
-            choices=["file", "url", "domain", "ip-src", "ip-dst", "log", "other"],
+            choices=["file", "url", "domain", "ip-src", "ip-dst", "other"],
         ),
     ]
     while True:
@@ -138,6 +138,7 @@ def get_user_input() -> UserInput:
                     attributes.append((ioc_type, ioc_value, ioc_comment))
                 else:
                     objects.append((ioc_type, ioc_value, ioc_comment))
+        print("")
         ans = input("Do you have another IoC? [y/n]: ")
         if not ans or ans[0].lower() == "n":
             ui = UserInput(event_uuid, ticket_url, event_info, objects, file_objects, attributes)

@@ -14,7 +14,7 @@ MISPイベントを作成するCLIツール
 1. [Python 3.12.3](https://www.python.org/downloads) をインストール
 2. CLIで、`python3 -V` できることを確認
 3. CLIで、`pip3 -v` できることを確認
-4. `pip3 install --upgrade pip` で`pip3`を最新化する
+4. `pip install --upgrade pip` で`pip`を最新化する
 
 #### Git
 1. Gitをインストール
@@ -23,10 +23,10 @@ MISPイベントを作成するCLIツール
 ## インストール
 1. `git clone https://github.com/fukusuket/cli-misp.git`
 2. `cd cli-misp`
-3. `pip3 install -r requirements.txt`
+3. `pip install -r requirements.txt`
 4. MISPのURLを`cli-misp.py`の11行目にセットする 
 5. MISPのAPIキーを`cli-misp.py`の12行目にセットする
-6. `python3 cli-misp.py`を実行し、エラーにならないことを確認(URL/APIキー間違いの場合はエラー終了する)
+6. `python cli-misp.py`を実行し、エラーにならないことを確認(URL/APIキー間違いの場合はエラー終了する)
 
 ## 使い方
 `python3 cli-misp.py` を実行し、順次プロンプトに入力する。
