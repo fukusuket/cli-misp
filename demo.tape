@@ -85,6 +85,15 @@ Type "2024-01-01T00:00:00"  Enter
 Sleep 2s
 Type "42c20820fa228d97dab4f807a88bf053859279db4509ed079bbf68dac7f69047"  Enter
 Sleep 2s
+Type "y"  Enter
+Sleep 2s
+Down
+Down
+Enter
+Sleep 2s
+Type "www.example.com"  Enter
+Sleep 2s
+Type "download url"  Enter
 Type "n"  Enter
 Sleep 5s
 Type "y"  Enter

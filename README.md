@@ -1,7 +1,7 @@
 # cli-misp
 CLIからMISPイベントを作成するツール
 ### Input
-以下プロンプトにしたがって入力する。値が不明な場合は未入力でEnter。
+以下プロンプトにしたがって入力する。値が不明(or 不要)な場合は未入力でEnterでOK。**(*)** は必須入力項目。
 <img alt="Logo" src="demo.gif">
 
 ### Output
@@ -14,19 +14,19 @@ CLIからMISPイベントを作成するツール
 1. [Python 3.12.3](https://www.python.org/downloads) をインストール
 2. CLIで、`python3 -V` できることを確認
 3. CLIで、`pip3 -v` できることを確認
-4. `pip3 install --upgrade pip` でpip3を最新化する
+4. `pip3 install --upgrade pip` で`pip3`を最新化する
 
 #### Git
-1. [Git](https://gitforwindows.org/) をインストール
+1. Gitをインストール
 2. CLIで、`git -v` できることを確認
 
 ## インストール
 1. `git clone https://github.com/fukusuket/cli-misp.git`
 2. `cd cli-misp`
 3. `pip3 install -r requirements.txt`
-4. MISP URL を`cli-misp.py`の11行目にセットする 
-5. MISP API KEY を`cli-misp.py`の12行目にセットする
-6. `python3 cli-misp.py`でエラーにならないことを確認
+4. MISPのURLを`cli-misp.py`の11行目にセットする 
+5. MISPのAPIキーを`cli-misp.py`の12行目にセットする
+6. `python3 cli-misp.py`でエラーにならないことを確認(URL/APIキー間違いの場合はエラー終了する)
 
 ## 使い方
 `python3 cli-misp.py` を実行し、順次質問に入力する。
@@ -39,4 +39,4 @@ CLIからMISPイベントを作成するツール
 - https://www.circl.lu/doc/misp-taxonomies/#_workflow
 
 ### Galaxy
-- 付与しない
+- 付与しない（手動で付与する）
