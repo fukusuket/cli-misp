@@ -9,7 +9,7 @@ from urllib3.exceptions import InsecureRequestWarning
 urllib3.disable_warnings(InsecureRequestWarning)
 
 MISP_URL = "https://localhost/"
-MISP_API_KEY = "xxxxxxxxxxxxxxxxx"
+MISP_API_KEY = "xxxxxxxxxxx"
 
 
 @dataclass(frozen=True)
