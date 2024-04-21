@@ -24,9 +24,9 @@ CLIからMISPイベントを作成するツール
 1. `git clone https://github.com/fukusuket/cli-misp.git`
 2. `cd cli-misp`
 3. `pip3 install -r requirements.txt`
-4. `python3 cli-misp.py`でエラーにならないことを確認
-5. MISP URL を`cli-misp.py`の11行目にセットする
-6. MISP API KEY を`cli-misp.py`の12行目にセットする
+4. MISP URL を`cli-misp.py`の11行目にセットする 
+5. MISP API KEY を`cli-misp.py`の12行目にセットする
+6. `python3 cli-misp.py`でエラーにならないことを確認
 
 ## 使い方
 `python3 cli-misp.py` を実行し、順次質問に入力する。
