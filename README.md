@@ -29,7 +29,12 @@ CLIからMISPイベントを作成するツール
 6. `python3 cli-misp.py`でエラーにならないことを確認(URL/APIキー間違いの場合はエラー終了する)
 
 ## 使い方
-`python3 cli-misp.py` を実行し、順次質問に入力する。
+`python3 cli-misp.py` を実行し、順次プロンプトに入力する。
+- 新規Event作成時: `UUID of an existing Event`は未入力で
+- 既存Event更新時: `UUID of an existing Event`は更新対象のEventのUUID
+- 他組織Eventの拡張時: `UUID of an existing Event`は拡張したい他組織のEvent UUID
+
+このツールで付与しないGalaxyは、手動で付与する。
 
 ## ツールが付与するコンテキスト
 ### Taxonomy
