@@ -8,7 +8,7 @@ from urllib3.exceptions import InsecureRequestWarning
 urllib3.disable_warnings(InsecureRequestWarning)
 
 MISP_URL = "https://localhost"
-MISP_API_KEY = "xxxxxxxxxxxxxxxxxx"
+MISP_API_KEY = "xxxxxxxxxxxx"
 
 
 @dataclass(frozen=True)
@@ -124,7 +124,7 @@ def get_user_input() -> UserInput:
 def check_misp_connection(url, key) -> ExpandedPyMISP:
     print(f"Start to connect MISP[{MISP_URL}].")
     try:
-        misp = ExpandedPyMISP(MISP_URL, MISP_API_KEY, False)
+        misp = PyMISP(MISP_URL, MISP_API_KEY, False)
         print(f"Connecting to MISP[{MISP_URL}] done.")
         return misp
     except Exception as e:
