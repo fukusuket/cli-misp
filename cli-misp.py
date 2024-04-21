@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from simple_term_menu import TerminalMenu
+import inquirer
 from tabulate import tabulate
 from pymisp import MISPEvent, MISPObject, PyMISP
 import sys
@@ -9,7 +9,7 @@ from urllib3.exceptions import InsecureRequestWarning
 urllib3.disable_warnings(InsecureRequestWarning)
 
 MISP_URL = "https://localhost/"
-MISP_API_KEY = "xxxxxxxxxxx"
+MISP_API_KEY = "9xlgP0x2tNi2cmpwAAnqZ0YzPuGcWVIbTGnoKuOT"
 
 
 @dataclass(frozen=True)
@@ -112,11 +112,16 @@ def get_user_input() -> UserInput:
     objects = []
     attributes = []
     file_objects = []
-    ioc_type_opt = ["file", "url", "domain", "ip-src", "ip-dst", "log", "other"]
+    questions = [
+        inquirer.List(
+            "ioc_type",
+            message="(*) Choose IoC type: ",
+            choices=["file", "url", "domain", "ip-src", "ip-dst", "log", "other"],
+        ),
+    ]
     while True:
-        print("(*) Choose IoC type: ")
-        ioc_type_index = TerminalMenu(ioc_type_opt).show()
-        ioc_type = ioc_type_opt[ioc_type_index]
+        ans = inquirer.prompt(questions)
+        ioc_type = ans["ioc_type"]
         if ioc_type == "file":
             v1 = input(f"(*) file name or path: ").strip()
             v2 = input(f"    file command line: ").strip()
