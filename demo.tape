@@ -63,7 +63,7 @@ Set Shell "bash"
 Set FontSize 20
 Set Width 1200
 Set Height 600
-Set TypingSpeed 30ms
+Set TypingSpeed 50ms
 
 Type "python3 cli-misp.py"  Enter
 Sleep 1s
@@ -88,4 +88,4 @@ Sleep 1s
 Type "n"  Enter
 Sleep 1s
 Type "y"  Enter
-Sleep 3s
+Sleep 10s
