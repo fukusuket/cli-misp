@@ -5,7 +5,7 @@ CLIからMISPイベントを作成するツール
 <img alt="Logo" src="demo.gif">
 
 ### Output
-上記実行後にMISPにイベントが作成される。
+上記実行後にすると以下のようなEventがMISPに作成される。
 <img alt="misp1" src="misp1.png" width="70%">
 <img alt="misp2" src="misp2.png">
 
