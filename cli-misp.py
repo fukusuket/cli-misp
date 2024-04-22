@@ -126,7 +126,7 @@ def get_user_input() -> UserInput:
         inquirer.List(
             "ioc_type",
             message="(*) Choose IoC type: ",
-            choices=["file", "url", "domain", "ip", "other"],
+            choices=["ip", "file", "url", "domain", "other"],
         ),
     ]
     while True:
