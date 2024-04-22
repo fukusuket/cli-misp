@@ -9,7 +9,7 @@ from urllib3.exceptions import InsecureRequestWarning
 urllib3.disable_warnings(InsecureRequestWarning)
 
 MISP_URL = "https://localhost/"
-MISP_API_KEY = "test"
+MISP_API_KEY = "9xlgP0x2tNi2cmpwAAnqZ0YzPuGcWVIbTGnoKuOT"
 
 
 @dataclass(frozen=True)
@@ -40,8 +40,8 @@ class UserInput:
             table.append([key, val])
         for f in self.file_objects:
             table.append(["file", f"{f.name}, {f.cmdline} ..."])
-        for key, val in self.attributes:
-            table.append([key, val])
+        for key, val, comment in self.attributes:
+            table.append([key, val, comment])
         return tabulate(table)
 
 
