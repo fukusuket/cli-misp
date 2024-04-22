@@ -50,7 +50,17 @@ def build_misp_objects(ui: UserInput) -> list[MISPObject]:
     for type, val, comment in ui.objects:
         name = "url" if type == "url" else "domain-ip"
         obj = MISPObject(name=name)
-        obj.add_attribute(type.replace("-dst", "").replace("-src",""), value=val)
+        if name == "domain-ip":
+            if ":" in val:
+                ip_or_domain, port = val.split(":")
+                if type == "ip":
+                    obj.add_attribute("ip", ip_or_domain)
+                else:
+                    obj.add_attribute("domain", ip_or_domain)
+                if port:
+                    obj.add_attribute("port", int(port))
+        else:
+            obj.add_attribute(type, value=val)
         if comment:
             obj.add_attribute("text", comment)
         objects.append(obj)
@@ -116,7 +126,7 @@ def get_user_input() -> UserInput:
         inquirer.List(
             "ioc_type",
             message="(*) Choose IoC type: ",
-            choices=["file", "url", "domain", "ip-src", "ip-dst", "other"],
+            choices=["file", "url", "domain", "ip", "other"],
         ),
     ]
     while True:
