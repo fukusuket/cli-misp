@@ -9,7 +9,7 @@ from urllib3.exceptions import InsecureRequestWarning
 urllib3.disable_warnings(InsecureRequestWarning)
 
 MISP_URL = "https://localhost/"
-MISP_API_KEY = "xxxxxxxxxxxxxxxx"
+MISP_API_KEY = "test"
 
 
 @dataclass(frozen=True)
@@ -50,7 +50,7 @@ def build_misp_objects(ui: UserInput) -> list[MISPObject]:
     for type, val, comment in ui.objects:
         name = "url" if type == "url" else "domain-ip"
         obj = MISPObject(name=name)
-        obj.add_attribute(type, value=val)
+        obj.add_attribute(type.replace("-dst", "").replace("-src",""), value=val)
         if comment:
             obj.add_attribute("text", comment)
         objects.append(obj)
