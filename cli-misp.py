@@ -102,8 +102,8 @@ def build_misp_event(ui: UserInput, misp: PyMISP) -> (MISPEvent, bool):
         event.add_tag('workflow:state="draft"')
         event.add_tag('course-of-action:active="deny"')
         event.add_tag('course-of-action:active="detect"')
-        event.add_tag('estimative-language:confidence-in-analytic-judgment="high"')
-        event.add_tag('estimative-language:likelihood-probability="very-likely"')
+        event.add_tag('estimative-language:confidence-in-analytic-judgment="moderate"')
+        event.add_tag('estimative-language:likelihood-probability="likely"')
         event.add_tag('malware_classification:malware-category="Trojan"')
         event.add_attribute(type="comment", value=ui.ticket_url, comment="internal ticket url")
     for obj in build_misp_objects(ui):
