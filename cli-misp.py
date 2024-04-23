@@ -94,7 +94,7 @@ def build_misp_event(ui: UserInput, misp: PyMISP) -> (MISPEvent, bool):
     is_new_event = True
     event = MISPEvent()
     if ui.event_uuid:
-        existing_event = misp.get_event(ui.event_uuid, pythonify=False)
+        existing_event = misp.get_event(ui.event_uuid, pythonify=True)
         if "2" == str(existing_event["Event"]["orgc_id"]):
             event = existing_event
             event.delete_tag('workflow:state="complete"')
