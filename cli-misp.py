@@ -108,7 +108,7 @@ def build_misp_event(ui: UserInput, misp: PyMISP) -> (MISPEvent, bool):
         event.add_tag('tlp:green')
         event.add_tag('workflow:state="draft"')
         event.add_tag('course-of-action:active="deny"')
-        event.add_tag('course-of-action:active="detect"')
+        event.add_tag('course-of-action:passive="detect"')
         event.add_tag('estimative-language:confidence-in-analytic-judgment="moderate"')
         event.add_tag('estimative-language:likelihood-probability="likely"')
         event.add_tag('malware_classification:malware-category="Trojan"')
