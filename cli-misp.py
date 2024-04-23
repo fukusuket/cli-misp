@@ -52,13 +52,22 @@ def build_misp_objects(ui: UserInput) -> list[MISPObject]:
         obj = MISPObject(name=name)
         if name == "domain-ip":
             if ":" in val:
-                ip_or_domain, port = val.split(":")
-                if type == "ip":
-                    obj.add_attribute("ip", ip_or_domain)
+                if val.count(":") == 1:
+                    ip_or_domain, port = val.split(":")
+                    if type == "ip":
+                        obj.add_attribute("ip", ip_or_domain)
+                    else:
+                        obj.add_attribute("domain", ip_or_domain)
+                    if port:
+                        obj.add_attribute("port", int(port))
                 else:
-                    obj.add_attribute("domain", ip_or_domain)
-                if port:
-                    obj.add_attribute("port", int(port))
+                    if type == "ip": #ipv6
+                        obj.add_attribute("ip", val)
+            else:
+                if type == "ip":
+                    obj.add_attribute("ip", val)
+                else:
+                    obj.add_attribute("domain", val)
         else:
             obj.add_attribute(type, value=val)
         if comment:
@@ -97,7 +106,7 @@ def build_misp_event(ui: UserInput, misp: PyMISP) -> (MISPEvent, bool):
         event.info = ui.event_info
         event.distribution = 3
         event.analysis = 2
-        event.threat_level_id = 1
+        event.threat_level_id = 2
         event.add_tag('tlp:green')
         event.add_tag('workflow:state="draft"')
         event.add_tag('course-of-action:active="deny"')
