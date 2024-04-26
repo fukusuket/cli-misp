@@ -95,7 +95,7 @@ def build_misp_event(ui: UserInput, misp: PyMISP) -> (MISPEvent, bool):
     event = MISPEvent()
     if ui.event_uuid:
         existing_event = misp.get_event(ui.event_uuid, pythonify=True)
-        if "BT 17" == existing_event.orgc.name:
+        if "xxx" == existing_event.orgc.name:
             event = existing_event
             is_new_event = False
         else:
