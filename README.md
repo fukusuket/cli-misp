@@ -11,7 +11,7 @@ MISPイベントを作成するCLIツール
 
 ## 事前準備
 #### Python
-1. [Python 3.12.3](https://www.python.org/downloads) をインストール
+1. [Python 3.13.3(3系ならOK)](https://www.python.org/downloads) をインストール
 2. CLIで、`python -V` できることを確認
 3. CLIで、`pip -v` できることを確認
 4. `pip install --upgrade pip` で`pip`を最新化する
