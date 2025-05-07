@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 import inquirer
 from tabulate import tabulate
-from pymisp import MISPEvent, MISPObject, PyMISP
+from pymisp import MISPEvent, MISPObject, PyMISP, MISPGalaxyCluster
 import sys
 import urllib3
 from urllib3.exceptions import InsecureRequestWarning
@@ -9,7 +9,7 @@ from urllib3.exceptions import InsecureRequestWarning
 urllib3.disable_warnings(InsecureRequestWarning)
 
 MISP_URL = "https://localhost/"
-MISP_API_KEY = "KEY"
+MISP_API_KEY = "bdOjjYEJ2Dx1jCWwTwH3IfP5RCWFlAA9k4N4Lm2n"
 
 
 @dataclass(frozen=True)
@@ -179,16 +179,24 @@ if __name__ == "__main__":
     misp = check_misp_connection(MISP_URL, MISP_API_KEY)
     user_input = get_user_input()
     misp_event, is_new_event = build_misp_event(user_input, misp)
+    gala_ene = misp.get_galaxy_cluster("24799", pythonify=True) # エネルギー
+    gala_wat = misp.get_galaxy_cluster("24849", pythonify=True) # 水力
+    gala_mil = misp.get_galaxy_cluster("24819", pythonify=True) # 防衛
+    galas = [gala_ene, gala_wat, gala_mil]
+    print(galas)
     print("")
     if is_new_event:
         print("Start to adding event to misp.")
-        res = misp.add_event(misp_event)
+        res = misp.add_event(misp_event,pythonify=True)
+        for gala in galas:
+            print(gala)
+            misp.attach_galaxy_cluster(res, gala)
     else:
         print("Start to updating event to misp.")
         res = misp.update_event(misp_event)
     print("Adding event done successfully!")
     print("")
     print(f"You can view added event:")
-    print(f"{MISP_URL}/events/view/{str(res['Event']['id'])}")
-    print(f"{str(res['Event']['uuid'])}")
+    print(f"{MISP_URL}/events/view/{res.id}")
+    print(f"{res.uuid}")
     print("")
